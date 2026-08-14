@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- SEO -->
+  <title>Vedang Pathak | Full Stack Developer Portfolio</title>
+  <meta name="description" content="Vedang Pathak – Undergraduate Developer skilled in MongoDB, Express.js, React, Node.js, SQL, and DBMS. View projects, dashboards, and resume."/>
+  <meta name="keywords" content="Data Analyst, Excel, Power BI, HTML5, CSS3, SQL, Portfolio, Vedang Pathak"/>
+  <meta name="author" content="Vedang Pathak"/>
+
+  <style>
+:root {
+  --bg: #f7f8fa;
+  --surface: rgba(255, 255, 255, 0.88);
+  --surface-solid: #ffffff;
+  --text: #111827;
+  --heading: #0b1220;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+  --accent-soft: rgba(37, 99, 235, 0.10);
+  --border: rgba(15, 23, 42, 0.09);
+  --shadow: 0 12px 35px rgba(15, 23, 42, 0.07);
+  --shadow-hover: 0 20px 45px rgba(15, 23, 42, 0.12);
+  --radius: 20px;
+  --radius-small: 12px;
+}
+
+body.dark {
+  --bg: #070b12;
+  --surface: rgba(17, 24, 39, 0.82);
+  --surface-solid: #111827;
+  --text: #e5e7eb;
+  --heading: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #60a5fa;
+  --accent-dark: #3b82f6;
+  --accent-soft: rgba(96, 165, 250, 0.12);
+  --border: rgba(148, 163, 184, 0.14);
+  --shadow: 0 15px 40px rgba(0, 0, 0, 0.28);
+  --shadow-hover: 0 25px 55px rgba(0, 0, 0, 0.42);
+}
+
+
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(37, 99, 235, 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(59, 130, 246, 0.05),
+      transparent 28%
+    ),
+    var(--bg);
+
+  color: var(--text);
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  line-height: 1.6;
+  overflow-x: hidden;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+strong {
+  color: var(--heading);
+}
+
+h1 {
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  margin-bottom: 24px;
+  font-weight: 800;
+}
+
+h2 {
+  position: relative;
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-bottom: 30px;
+  font-weight: 750;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 3px;
+  margin-top: 12px;
+  border-radius: 20px;
+  background: var(--accent);
+}
+
+p {
+  color: var(--muted);
+  max-width: 750px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+nav {
+  position: sticky;
+  top: 18px;
+  z-index: 1000;
+
+  width: min(1100px, calc(100% - 32px));
+  min-height: 64px;
+
+  margin: 18px auto 0;
+  padding: 10px 16px 10px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  box-shadow: var(--shadow);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    background 0.3s ease,
+    border 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+nav strong {
+  white-space: nowrap;
+  font-size: 1rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+nav > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  min-width: 0;
+}
+
+nav a {
+  position: relative;
+
+  margin: 0 5px;
+  padding: 7px 8px;
+
+  color: var(--muted);
+  text-decoration: none;
+
+  font-size: 0.88rem;
+  font-weight: 600;
+
+  border-radius: 9px;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.toggle {
+  width: 36px;
+  height: 36px;
+
+  margin-left: 7px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+  user-select: none;
+
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.toggle:hover {
+  transform: rotate(12deg);
+  background: var(--accent);
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+section {
+  width: min(1100px, calc(100% - 32px));
+
+  padding: 90px 0;
+  margin: auto;
+}
+
+section:first-of-type {
+  padding-top: 105px;
+}
+
+
+/* =========================================================
+   UNIVERSAL CARD
+   ========================================================= */
+
+.card {
+  position: relative;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  padding: 28px;
+
+  box-shadow: var(--shadow);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(37, 99, 235, 0.20);
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+#about .card {
+  max-width: 950px;
+}
+
+#about ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  gap: 14px;
+}
+
+#about li {
+  position: relative;
+
+  margin: 0;
+  padding-left: 28px;
+
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+#about li::before {
+  content: "✓";
+
+  position: absolute;
+  left: 0;
+  top: 1px;
+
+  width: 19px;
+  height: 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--accent);
+  background: var(--accent-soft);
+
+  border-radius: 50%;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+
+  padding: 9px 17px;
+
+  border-radius: 10px;
+
+  background: var(--accent);
+  color: #ffffff !important;
+
+  border: 1px solid transparent;
+
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 650;
+
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
+  opacity: 1;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  padding: 24px;
+}
+
+.skill {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 38px;
+
+  padding: 7px 13px;
+
+  border-radius: 10px;
+
+  background: var(--bg);
+  border: 1px solid var(--border);
+
+  color: var(--muted);
+
+  font-size: 0.84rem;
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.skill:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: rgba(37, 99, 235, 0.22);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PROJECTS GRID
+   ========================================================= */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   PROJECT CARDS
+   ========================================================= */
+
+.project {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  height: 100%;
+}
+
+.project img {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 14px;
+  border: 1px solid var(--border);
+
+  margin-bottom: 20px;
+
+  background: var(--bg);
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.project:hover img {
+  filter: brightness(1.04);
+}
+
+.project strong {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 1.08rem;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.project p {
+  font-size: 0.91rem;
+  line-height: 1.65;
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+
+/* =========================================================
+   CERTIFICATIONS GRID
+   ========================================================= */
+
+.certificate-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   CERTIFICATE CARDS
+   ========================================================= */
+
+.certificate {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  height: 100%;
+}
+
+.certificate img {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 14px;
+  border: 1px solid var(--border);
+
+  margin-bottom: 20px;
+
+  background: var(--bg);
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.certificate:hover img {
+  filter: brightness(1.04);
+}
+
+.certificate strong {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 1.02rem;
+  line-height: 1.4;
+}
+
+.certificate p {
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.certificate-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+
+/* =========================================================
+   CONNECT
+   ========================================================= */
+
+.connect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+  gap: 14px;
+
+  padding: 30px;
+}
+
+.connect a {
+  margin: 0 !important;
+
+  width: 66px;
+  height: 66px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: var(--bg);
+  border: 1px solid var(--border);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.connect a:hover {
+  transform: translateY(-5px);
+  background: var(--accent-soft);
+  border-color: rgba(37, 99, 235, 0.25);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.10);
+}
+
+.connect img {
+  width: 34px;
+  height: 34px;
+
+  object-fit: contain;
+
+  transition: transform 0.25s ease;
+}
+
+.connect a:hover img {
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  width: min(1100px, calc(100% - 32px));
+
+  margin: 0 auto;
+  padding: 30px 0 45px;
+
+  text-align: center;
+
+  color: var(--muted);
+  font-size: 0.82rem;
+
+  border-top: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  nav {
+    width: calc(100% - 24px);
+  }
+
+  nav a {
+    margin: 0 2px;
+    padding: 7px 6px;
+    font-size: 0.8rem;
+  }
+
+  section {
+    padding: 75px 0;
+  }
+
+  .certificate-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  nav {
+    top: 10px;
+
+    width: calc(100% - 20px);
+
+    padding: 9px 12px;
+
+    border-radius: 15px;
+
+    gap: 10px;
+  }
+
+  nav strong {
+    font-size: 0.9rem;
+  }
+
+  nav > div {
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    padding-bottom: 1px;
+  }
+
+  nav > div::-webkit-scrollbar {
+    display: none;
+  }
+
+  nav a {
+    flex: 0 0 auto;
+
+    margin: 0;
+    padding: 6px 7px;
+
+    font-size: 0.73rem;
+  }
+
+  .toggle {
+    flex: 0 0 34px;
+
+    width: 34px;
+    height: 34px;
+
+    margin-left: 3px;
+  }
+
+  section {
+    width: calc(100% - 28px);
+
+    padding: 65px 0;
+  }
+
+  section:first-of-type {
+    padding-top: 85px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 1.65rem;
+    margin-bottom: 24px;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 17px;
+  }
+
+  .projects-grid,
+  .certificate-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .certificate img {
+    aspect-ratio: 16 / 10;
+  }
+
+  .skills {
+    gap: 8px;
+  }
+
+  .skill {
+    font-size: 0.78rem;
+    padding: 7px 10px;
+  }
+
+  .connect {
+    gap: 10px;
+    padding: 22px;
+  }
+
+  .connect a {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+  }
+
+  .connect img {
+    width: 30px;
+    height: 30px;
+  }
+
+  footer {
+    width: calc(100% - 28px);
+    padding-bottom: 30px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  nav {
+    align-items: center;
+  }
+
+  nav strong {
+    font-size: 0.82rem;
+  }
+
+  nav a {
+    font-size: 0.68rem;
+    padding: 5px 6px;
+  }
+
+  section {
+    width: calc(100% - 22px);
+  }
+
+  .card {
+    padding: 17px;
+  }
+
+  #about li {
+    padding-left: 25px;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .project-footer,
+  .certificate-footer {
+    display: block;
+  }
+
+  .project-footer .btn,
+  .certificate-footer .btn {
+    margin-top: 4px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+  </style>
+</head>
+
+<body class="dark">
+
+<nav>
+  <strong>Vedang Pathak</strong>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certificate">Certifications</a>
+    <a href="#connect">Contact</a>
+    <span class="toggle" onclick="toggleTheme()">🌗</span>
+  </div>
+</nav>
+
+<section id="about">
+  <h1>Hello, I’m Vedang 👋</h1>
+  <div class="card">
+    <ul>
+      <li>Undergraduate Full Stack Developer with Real-World Problem Analysis</li>
+      <li>Hands-on experience with MERN stack, SQL, Power BI and Structured SQL quering.</li>
+      <li>Built academic and real-world projects focused on functionality and clarity.</li>
+      <li>Comfortable working with databases and backend logic with web development.</li>
+      <li>Interested in dashboards, analytics, and business insights.</li>
+      <li>Actively improving skills through projects and continuous learning.</li>
+    </ul>
+    <br/>
+    <a class="btn" href="Resume.pdf" download>Download Resume</a>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card skills">
+    <span class="skill">AWS</span>
+    <span class="skill">SQL</span>
+    <span class="skill">No-SQL</span>
+    <span class="skill">MongoDB</span>
+    <span class="skill">D-beaver</span>
+    <span class="skill">Python</span>
+    <span class="skill">M-Language</span>
+    <span class="skill">C++</span>
+    <span class="skill">DBMS</span>
+    <span class="skill">OOP</span>
+    <span class="skill">DAA</span>
+    <span class="skill">Data Analysis</span>
+    <span class="skill">C</span>
+    <span class="skill">Communication</span>
+    <span class="skill">Video Editing</span>
+    <span class="skill">Leadership</span>
+    <span class="skill">Time Management</span>
+    <span class="skill">Calculas</span>
+    <span class="skill">Statistics</span>
+    <span class="skill">Networking Security Basics</span>
+    <span class="skill">Probability</span>
+    <span class="skill">R</span>
+    <span class="skill">Quantum Computing</span>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+
+    <div class="card project">
+      <img src="microproject.png" alt="Microproject"/>
+      <strong>Pharmacy Inventory Management System</strong>
+      <p>Full stack.</p>
+      <div class="project-footer">
+        <span>
+        <a class="btn" href="https://github.com/anshjw/Sci-Lab-Equip-E-Commerce" target="_blank">View Project</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="card project">
+      <img src="Screenshot 2026-07-31 193324.png" alt="Excel Dashboard 1"/>
+      <strong></strong>
+      <p>Pharmaceutical, medical ingredients and Gene data analysis.</p>
+      <div class="project-footer">
+        <span>
+        <a class="btn" href="https://github.com/anshjw/Pharmaceuticals-Data-Analytics" target="_blank">View Project</a>
+        </span>
+      </div>
+    </div>
+    
+    <div class="card project">
+      <img src="Recording2026-02-02203523-ezgif.com-video-to-gif-converter.gif" alt="Excel Dashboard 1"/>
+      <strong>Data Science Salary Dashboard</strong>
+      <p>Data Science Salary calculator dashboard using MS Excel and DAX.</p>
+      <div class="project-footer">
+        <span>
+        <a class="btn" href="https://github.com/anshjw/Data-Science-Job-Salary-Analysis" target="_blank">View Project</a>
+        </span>
+      </div>
+    </div>
+    
+    <div class="card project">
+      <img src="gym.png" alt="Gym Management System"/>
+      <strong>Gym Management System</strong>
+      <p>Admin-focused system to manage members, plans, billing, and gym operations with package renewal reminder.</p>
+      <div class="project-footer">
+        <span>
+        <a class="btn" href="https://github.com/anshjw/Gym-Management-System.git" target="_blank">View Project</a>
+        </span>
+      </div>
+    </div>
+
+    
+
+  </div>
+</section>
+
+<section id="certificate">
+  <h2>Technical Certifications</h2>
+  <div class="certificate-grid">
+
+    <div class="card certificate">
+      <img src="Screenshot 2026-08-11 230824.png" alt="Quantum"/>
+      <strong>Quantum computing</strong>
+      <p>Quantum Computing by Centre for Development of Advanced Computing, Hyderabad & Indian Institute of Technology, Roorkee</p>
+      <div class="certificate-footer">
+        <span>
+        <a class="btn" href="qctraining@cdac.in" target="_blank">Verify</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="card certificate">
+      <img src="Screenshot 2026-08-11 224950.png" alt="Finance"/>
+      <strong>AI Workshop</strong>
+      <p>Finance fundamentals using AI Workshop by Dr. Finance</p>
+      <div class="certificate-footer">
+        <span>
+        <a class="btn" href="https://certx.in/certificate/9318e7f9-0234-4ea4-9390-efad88624b8b251741" target="_blank">Verify</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="card certificate">
+      <img src="Screenshot 2026-08-11 224150.png" alt="Network"/>
+      <strong>Cybersecurity Basics</strong>
+      <p>Introduction to cyber security by CISCO Netcad.</p>
+      <div class="certificate-footer">
+        <span>
+        <a class="btn" href="https://www.credly.com/badges/fd0b33a3-641d-44ee-83cc-7164ad482411" target="_blank">Verify</a>
+        </span>
+      </div>
+    </div>
+
+  </div>
+  
+</section>
+  
+
+<section id="connect">
+  <h2>Connect</h2>
+  <div class="card connect">
+    <a href="https://github.com/anshjw" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+    </a>&emsp;
+    <a href="https://www.linkedin.com/in/ansh-jaiswal-" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg">
+    </a>&emsp;
+    <a href="https://www.kaggle.com/anshjw" target="_blank">
+      <img src="https://www.kaggle.com/static/images/site-logo.svg">
+    </a>&emsp;
+    <a href="mailto:pathakvedang17@gmail.com">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png">
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Vedang Pathak · Full Stack Developer Portfolio
+</footer>
+
+<script>
+  function toggleTheme(){document.body.classList.toggle("dark");}
+</script>
+
+</body>
+</html>
