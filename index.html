@@ -4,7 +4,9 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- SEO -->
+  <!-- ===================================================================
+       SEO / META
+       =================================================================== -->
   <title>Vedang Pathak | Full Stack Developer Portfolio</title>
   <meta name="description" content="Vedang Pathak – Undergraduate Developer skilled in MongoDB, Express.js, React, Node.js, SQL, and DBMS. View projects, dashboards, and resume."/>
   <meta name="keywords" content="Data Analyst, Excel, Power BI, HTML5, CSS3, SQL, Portfolio, Vedang Pathak"/>
@@ -659,6 +661,131 @@ footer {
 
 
 /* =========================================================
+   NEW: EDUCATION
+   ========================================================= */
+
+.education h3 {
+  color: var(--heading);
+  font-size: 1.15rem;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.education .edu-college {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.edu-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.edu-meta span {
+  padding: 6px 13px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.edu-label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--heading);
+}
+
+.edu-courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+
+/* =========================================================
+   NEW: PROJECT EXTRAS (tech tags + highlight list)
+   ========================================================= */
+
+.project-points {
+  margin: 14px 0 0;
+  padding-left: 18px;
+
+  display: grid;
+  gap: 8px;
+
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tags span {
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   NEW: LEADERSHIP & VOLUNTEERING
+   ========================================================= */
+
+.leadership-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+  align-items: stretch;
+}
+
+.leadership {
+  min-width: 0;
+  height: 100%;
+}
+
+.leadership .role {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.leadership strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.02rem;
+  line-height: 1.4;
+}
+
+.leadership p {
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
    TABLET
    ========================================================= */
 
@@ -678,7 +805,8 @@ footer {
     padding: 75px 0;
   }
 
-  .certificate-grid {
+  .certificate-grid,
+  .leadership-grid {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
   }
@@ -762,7 +890,8 @@ footer {
   }
 
   .projects-grid,
-  .certificate-grid {
+  .certificate-grid,
+  .leadership-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
@@ -874,37 +1003,87 @@ footer {
 
 <body class="dark">
 
+
+<!-- ===================================================================
+     NAVBAR
+     =================================================================== -->
 <nav>
   <strong>Vedang Pathak</strong>
   <div>
     <a href="#about">About</a>
+    <a href="#education">Education</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
-    <a href="#certificate">Certifications</a>
+    <a href="#leadership">Leadership</a>
     <a href="#connect">Contact</a>
     <span class="toggle" onclick="toggleTheme()">🌗</span>
   </div>
 </nav>
 
+
+<!-- ===================================================================
+     SECTION 1: ABOUT
+     =================================================================== -->
 <section id="about">
   <h1>Hello, I’m Vedang 👋</h1>
   <div class="card">
     <ul>
+      <!-- Intro line (from resume) -->
+      <li>3rd-year B.Tech CSE (Data Science) undergraduate based in Nagpur, with hands-on experience across full-stack web development and applied machine learning.</li>
+
+      <!-- Existing points -->
       <li>Undergraduate Full Stack Developer with Real-World Problem Analysis</li>
       <li>Hands-on experience with MERN stack, SQL, Power BI and Structured SQL quering.</li>
       <li>Built academic and real-world projects focused on functionality and clarity.</li>
       <li>Comfortable working with databases and backend logic with web development.</li>
       <li>Interested in dashboards, analytics, and business insights.</li>
       <li>Actively improving skills through projects and continuous learning.</li>
+
+      <!-- Added from resume -->
+      <li>Built production-style systems spanning a Flask/SQL ERP platform and an ensemble ML pipeline achieving 98.8%+ classification accuracy.</li>
     </ul>
     <br/>
     <a class="btn" href="Resume.pdf" download>Download Resume</a>
   </div>
 </section>
 
+
+<!-- ===================================================================
+     SECTION 2: EDUCATION (new, from resume)
+     =================================================================== -->
+<section id="education">
+  <h2>Education</h2>
+  <div class="card education">
+    <h3>B.Tech in Computer Science and Engineering (Data Science)</h3>
+    <p class="edu-college">St. Vincent Pallotti College of Engineering and Technology, Nagpur</p>
+
+    <div class="edu-meta">
+      <span>CGPA: 8.40 / 10</span>
+      <span>Expected Graduation: 2028</span>
+    </div>
+
+    <span class="edu-label">Relevant Coursework</span>
+    <div class="edu-courses">
+      <span class="skill">Data Structures &amp; Algorithms</span>
+      <span class="skill">DBMS</span>
+      <span class="skill">Machine Learning</span>
+      <span class="skill">Statistics</span>
+      <span class="skill">Computer Networks</span>
+      <span class="skill">Computer Architecture</span>
+      <span class="skill">Operating Systems</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================================
+     SECTION 3: SKILLS
+     =================================================================== -->
 <section id="skills">
   <h2>Skills</h2>
   <div class="card skills">
+
+    <!-- Existing skills (unchanged) -->
     <span class="skill">AWS</span>
     <span class="skill">SQL</span>
     <span class="skill">No-SQL</span>
@@ -928,126 +1107,209 @@ footer {
     <span class="skill">Probability</span>
     <span class="skill">R</span>
     <span class="skill">Quantum Computing</span>
+
+    <!-- Added from resume: Languages -->
+    <span class="skill">Java (Basics)</span>
+    <span class="skill">JavaScript</span>
+
+    <!-- Added from resume: Web &amp; Backend -->
+    <span class="skill">Flask</span>
+    <span class="skill">Next.js</span>
+    <span class="skill">REST APIs</span>
+    <span class="skill">Bootstrap 5</span>
+    <span class="skill">Leaflet.js</span>
+    <span class="skill">Chart.js</span>
+    <span class="skill">Role-Based Access Control (RBAC)</span>
+
+    <!-- Added from resume: Databases -->
+    <span class="skill">MySQL</span>
+    <span class="skill">SQLite</span>
+
+    <!-- Added from resume: Cloud &amp; Infrastructure -->
+    <span class="skill">Linux / Bash</span>
+    <span class="skill">GCP &amp; Azure (Basics)</span>
+    <span class="skill">Virtualization</span>
+    <span class="skill">Git / GitHub</span>
+    <span class="skill">CI/CD Concepts</span>
+
+    <!-- Added from resume: Data Science &amp; ML -->
+    <span class="skill">Scikit-learn</span>
+    <span class="skill">XGBoost</span>
+    <span class="skill">Pandas</span>
+    <span class="skill">NumPy</span>
+    <span class="skill">Predictive Analytics</span>
+
+    <!-- Added: ML algorithms -->
+    <span class="skill">Linear Regression</span>
+    <span class="skill">Logistic Regression</span>
+    <span class="skill">Decision Trees</span>
+    <span class="skill">Random Forest</span>
+    <span class="skill">Support Vector Machine (SVM)</span>
+    <span class="skill">K-Means</span>
+    <span class="skill">Reinforcement Learning</span>
+    <span class="skill">CNN</span>
+
   </div>
 </section>
 
+
+<!-- ===================================================================
+     SECTION 4: PROJECTS (from resume only)
+     =================================================================== -->
 <section id="projects">
   <h2>Projects</h2>
   <div class="projects-grid">
 
+    <!-- ---------------------------------------------------------------
+         PROJECT: Swachh Nagpur IoT
+         Replace swachh-nagpur.png with a screenshot of your dashboard
+         and the link below with the project's repo URL.
+         --------------------------------------------------------------- -->
     <div class="card project">
-      <img src="microproject.png" alt="Microproject"/>
-      <strong>Pharmacy Inventory Management System</strong>
-      <p>Full stack.</p>
+      <img src="swachh-nagpur.png" alt="Swachh Nagpur IoT dashboard"/>
+      <strong>Swachh Nagpur IoT: Smart Waste Monitoring &amp; Dispatch Platform</strong>
+
+      <div class="tags">
+        <span>Python</span>
+        <span>Flask</span>
+        <span>SQLite</span>
+        <span>JavaScript</span>
+        <span>Leaflet.js</span>
+        <span>Chart.js</span>
+        <span>Bootstrap 5</span>
+        <span>REST APIs</span>
+      </div>
+
       <div class="project-footer">
         <span>
-        <a class="btn" href="https://github.com/anshjw/Sci-Lab-Equip-E-Commerce" target="_blank">View Project</a>
+        <a class="btn" href="https://github.com/Vedang1710" target="_blank">View Project</a>
         </span>
       </div>
     </div>
 
+    <!-- ---------------------------------------------------------------
+         PROJECT: Pharmacy Management System (DBMS)
+         Replace pharmacy.png with a screenshot and update the link.
+         --------------------------------------------------------------- -->
     <div class="card project">
-      <img src="Screenshot 2026-07-31 193324.png" alt="Excel Dashboard 1"/>
-      <strong></strong>
-      <p>Pharmaceutical, medical ingredients and Gene data analysis.</p>
+      <img src="pharmacy.png" alt="Pharmacy Management System"/>
+      <strong>Pharmacy Management System (DBMS)</strong>
+      <p>A local-storage–based database system for managing pharmacy records efficiently.</p>
       <div class="project-footer">
         <span>
-        <a class="btn" href="https://github.com/anshjw/Pharmaceuticals-Data-Analytics" target="_blank">View Project</a>
+        <a class="btn" href="https://github.com/Vedang1710" target="_blank">View Project</a>
         </span>
       </div>
     </div>
-    
+
+    <!-- ---------------------------------------------------------------
+         PROJECT: Crop Yield Prediction System
+         Replace crop-yield.png with a screenshot and update the link.
+         --------------------------------------------------------------- -->
     <div class="card project">
-      <img src="Recording2026-02-02203523-ezgif.com-video-to-gif-converter.gif" alt="Excel Dashboard 1"/>
-      <strong>Data Science Salary Dashboard</strong>
-      <p>Data Science Salary calculator dashboard using MS Excel and DAX.</p>
+      <img src="crop-yield.png" alt="Crop Yield Prediction System"/>
+      <strong>Crop Yield Prediction System</strong>
+      <p>A data-driven model designed to predict crop yield using historical and environmental datasets.</p>
       <div class="project-footer">
         <span>
-        <a class="btn" href="https://github.com/anshjw/Data-Science-Job-Salary-Analysis" target="_blank">View Project</a>
+        <a class="btn" href="https://github.com/Vedang1710" target="_blank">View Project</a>
         </span>
       </div>
     </div>
-    
+
+    <!-- ---------------------------------------------------------------
+         PROJECT: EEG-Based Automated Seizure Detection
+         Replace eeg-seizure.png with a screenshot and update the link.
+         --------------------------------------------------------------- -->
     <div class="card project">
-      <img src="gym.png" alt="Gym Management System"/>
-      <strong>Gym Management System</strong>
-      <p>Admin-focused system to manage members, plans, billing, and gym operations with package renewal reminder.</p>
+      <img src="eeg-seizure.png" alt="EEG-based seizure detection"/>
+      <strong>EEG-Based Automated Seizure Detection using Machine Learning</strong>
+      <p>Automated seizure detection from EEG signals using machine learning.</p>
       <div class="project-footer">
         <span>
-        <a class="btn" href="https://github.com/anshjw/Gym-Management-System.git" target="_blank">View Project</a>
-        </span>
-      </div>
-    </div>
-
-    
-
-  </div>
-</section>
-
-<section id="certificate">
-  <h2>Technical Certifications</h2>
-  <div class="certificate-grid">
-
-    <div class="card certificate">
-      <img src="Screenshot 2026-08-11 230824.png" alt="Quantum"/>
-      <strong>Quantum computing</strong>
-      <p>Quantum Computing by Centre for Development of Advanced Computing, Hyderabad & Indian Institute of Technology, Roorkee</p>
-      <div class="certificate-footer">
-        <span>
-        <a class="btn" href="qctraining@cdac.in" target="_blank">Verify</a>
-        </span>
-      </div>
-    </div>
-
-    <div class="card certificate">
-      <img src="Screenshot 2026-08-11 224950.png" alt="Finance"/>
-      <strong>AI Workshop</strong>
-      <p>Finance fundamentals using AI Workshop by Dr. Finance</p>
-      <div class="certificate-footer">
-        <span>
-        <a class="btn" href="https://certx.in/certificate/9318e7f9-0234-4ea4-9390-efad88624b8b251741" target="_blank">Verify</a>
-        </span>
-      </div>
-    </div>
-
-    <div class="card certificate">
-      <img src="Screenshot 2026-08-11 224150.png" alt="Network"/>
-      <strong>Cybersecurity Basics</strong>
-      <p>Introduction to cyber security by CISCO Netcad.</p>
-      <div class="certificate-footer">
-        <span>
-        <a class="btn" href="https://www.credly.com/badges/fd0b33a3-641d-44ee-83cc-7164ad482411" target="_blank">Verify</a>
+        <a class="btn" href="https://github.com/Vedang1710" target="_blank">View Project</a>
         </span>
       </div>
     </div>
 
   </div>
-  
 </section>
-  
 
+
+<!-- ===================================================================
+     SECTION 5: LEADERSHIP & VOLUNTEERING (new, from resume)
+     =================================================================== -->
+<section id="leadership">
+  <h2>Leadership &amp; Volunteering</h2>
+  <div class="leadership-grid">
+
+    <!-- ROLE: Head Coordinator -->
+    <div class="card leadership">
+      <span class="role">Head Coordinator</span>
+      <strong>Vizminds 3.0 (Data Dive 5.0)</strong>
+      <p>Led student teams to execute the flagship departmental technical event, managing cross-functional operations and mentorship.</p>
+    </div>
+
+    <!-- ROLE: Event Registration Manager -->
+    <div class="card leadership">
+      <span class="role">Event Registration Manager</span>
+      <strong>College Annual Festival</strong>
+      <p>Managed onboarding workflows and database logistics for the college annual festival.</p>
+    </div>
+
+    <!-- ROLE: VIBHA Volunteer -->
+    <div class="card leadership">
+      <span class="role">VIBHA Volunteer</span>
+      <strong>Vidyarthi Vigyan Manthan</strong>
+      <p>Coordinated exam administration and logistics for the national Vidyarthi Vigyan Manthan.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================================================================
+     SECTION 6: CONNECT
+     =================================================================== -->
 <section id="connect">
   <h2>Connect</h2>
   <div class="card connect">
-    <a href="https://github.com/anshjw" target="_blank">
+
+    <!-- GitHub (updated to your profile from resume) -->
+    <a href="https://github.com/Vedang1710" target="_blank">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
     </a>&emsp;
-    <a href="https://www.linkedin.com/in/ansh-jaiswal-" target="_blank">
+
+    <!-- LinkedIn (updated to your profile from resume) -->
+    <a href="https://www.linkedin.com/in/pathak-vedang/" target="_blank">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg">
     </a>&emsp;
+
+    <!-- Kaggle (existing, unchanged) -->
     <a href="https://www.kaggle.com/anshjw" target="_blank">
       <img src="https://www.kaggle.com/static/images/site-logo.svg">
     </a>&emsp;
+
+    <!-- Email -->
     <a href="mailto:pathakvedang17@gmail.com">
       <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png">
     </a>
+
   </div>
 </section>
 
+
+<!-- ===================================================================
+     FOOTER
+     =================================================================== -->
 <footer>
   © 2026 Vedang Pathak · Full Stack Developer Portfolio
 </footer>
 
+
+<!-- ===================================================================
+     SCRIPT: Dark / Light theme toggle
+     =================================================================== -->
 <script>
   function toggleTheme(){document.body.classList.toggle("dark");}
 </script>
